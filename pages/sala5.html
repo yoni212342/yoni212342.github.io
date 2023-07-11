@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedras que dan vida</title>
+    <link rel="stylesheet" href="../CSS/stylesalas.css">
+    <link rel="shortcut icon" href="im/loggo.png" type="image/x-icon">
+</head>
+<body>
+    <a class="backbtn" href="../museo.html#salas" style="z-index: 999;">⬅</a>
+    <div class="carousel">
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img1.jpeg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img2.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img3.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img4.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img5.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img6.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img7.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 5/sala5-img8.jpeg" alt="Imagen 2">
+        </div>
+        <!-- Agrega más slides según sea necesario -->
+        <button class="prev-button" id="prevBtn">&#10094;</button>
+        <button class="next-button" id="nextBtn">&#10095;</button>
+    </div>
+  
+    <section class="event" id="eventos">
+        <div class="sobre-nosotros">
+            <h3 align="center" class="about-title"><span>HISTORIA</span></h3>
+            <P align="center" class="about-p">
+                Piedras moradas de origen volcánico ásperas, y resistentes pero la ves dóciles que se transforman con la fuerza y delicadeza de quien con habilidades y 
+        técnicas golpea ritmicamente para que surjan metates, chirmoleras y objetos representativos que inundan de aromas y saberes la vida cotidiana no solo de 
+        Oaxaca, hoy en nuestros días son obras de arte que han pasado de utilizarse en la cocina a una pieza de lujo, adorno y colección. Piezas creadas por los artesanos
+        de <a href="https://www.google.com/maps/search/San+Juan+Teitipac,+tlacolula,+Oaxaca./@16.9393386,-96.627814,12z/data=!3m1!4b1?entry=ttu">San Juan Teltipac, tlacolula, Oaxaca.</a> El nombre de la comunidad viene del náhuatl que significa "Encima de la piedra".
+        Artesanos más representativos de esta técnica son:
+        <ul>
+            <li> José Felipe Mateo Cruz. </li>
+            <li>Artemia Paula Ruiz Luis</li>
+            <li> Victor Mateo Montaño </li>
+            <li> Javier Mateo Cruz </li>
+        </ul>
+        
+            </P>
+        </div>
+        <span class="back7"></span><span class="back8"></span><span class="back9"></span>
+    </section>
+
+
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+        slides.forEach((slide, index) => {
+            if (index === slideIndex) {
+            slide.classList.add("active");
+            } else {
+            slide.classList.remove("active");
+            }
+        });
+        }
+
+        function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    </script>
+</body>
+</html>

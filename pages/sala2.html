@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barro negro</title>
+    <link rel="stylesheet" href="../CSS/stylesalas.css">
+</head>
+<body>
+    <a class="backbtn" href="../museo.html#salas" style="z-index: 999;">⬅</a>
+    <div class="carousel">
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img1.jpeg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img2.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img3.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img4.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img5.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img6.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img7.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 2/sala2-img8.jpeg" alt="Imagen 2">
+        </div>
+        <!-- Agrega más slides según sea necesario -->
+        <button class="prev-button" id="prevBtn">&#10094;</button>
+        <button class="next-button" id="nextBtn">&#10095;</button>
+    </div>
+    
+    </P>
+    <section class="event" id="eventos">
+        <div class="sobre-nosotros">
+            <h3 align="center" class="about-title"><span>HISTORIA</span></h3>
+            <P align="center" class="about-p">
+                Se dice que las primeras piezas de este material fueron elaboradas en el periodo de Monte Albán (500 a.C). El barro negro en Oaxaca surge desde esa época. Los objetos eran creados con tierra, pero no servían para tareas como acarrear agua. 
+                Para mejorar su dureza, los artesanos quemaron el barro a fuego lento en hornos bajo tierra y con troncos de encino.
+                Asimismo, se encontraron vestigios de este material de uso doméstico en la cultura zapoteca y mixteca. Así surge el barro negro en Oaxaca.
+                Como máximos representantes de las artesanías de barro negro se encuentran Rosa Real de Mateo Nieto(Decubrió la técnica para darle brillo a las piezas de barro) y Carlo Magno Pedro Martínez (Director del museo estatal de arte popular oaxaca)
+        
+            </P>
+        </div>
+        <span class="back7"></span><span class="back8"></span><span class="back9"></span>
+    </section>
+
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+        slides.forEach((slide, index) => {
+            if (index === slideIndex) {
+            slide.classList.add("active");
+            } else {
+            slide.classList.remove("active");
+            }
+        });
+        }
+
+        function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeria de plata</title>
+    <link rel="stylesheet" href="../CSS/stylesalas.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="backbtn" href="../museo.html#salas" style="z-index: 999;">⬅</a>
+    <div class="carousel">
+        <div class="slide">
+            <img src="../im/sala 1/joya1.jpeg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya2.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya3.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya4.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya5.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya6.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya7.jpeg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="../im/sala 1/joya8.jpeg" alt="Imagen 2">
+        </div>
+        <!-- Agrega más slides según sea necesario -->
+        <button class="prev-button" id="prevBtn">&#10094;</button>
+        <button class="next-button" id="nextBtn">&#10095;</button>
+    </div>
+
+    <section class="event" id="eventos">
+        <div class="sobre-nosotros">
+            <h3 align="center" class="about-title"><span>HISTORIA</span></h3>
+            <P align="center" class="about-p">
+                La complejidad de la técnica hace necesario el conocimiento profundo de los materiales empleados y de sus propiedades. 
+                En el primer paso del proceso se elabora un modelo en cera del objeto que se quiere crear. A veces, para ahorrar metal 
+                o para crear un objeto hueco, el modelo se forma alrededor de un núcleo, que según el Códice Florentino se hacía de carbón 
+                vegetal y arcilla. El modelo de cera se envuelve a continuación en una capa de arcilla que forma el molde, dejando una apertura 
+                para la entrada del metal. Si no hay una conexión directa entre el núcleo y el molde, se recurre a pequeños estaquillos o clavos de 
+                madera para inmovilizar el núcleo. Después de haberse secado por completo, se calienta el molde para sacar la cera y quemar sus residuos. 
+                Dentro del molde, alrededor del núcleo (si lo hay), se crea así un espacio que será aprovechado en el próximo paso. Para introducir
+                 percutores en objetos huecos, pueden incorporarse en el interior del núcleo al inicio del proceso. Al retirar el núcleo se libera el percutor, el cual 
+                 tiene que ser ligeramente más grande que la apertura del objeto para que no se salga. Muchos de los objetos elaborados en metal muestran una superficie 
+                 que semeja una filigrana. Sin embargo, dichos objetos no están hechos con la técnica de la filigrana –con alambres de metal soldados–, sino que son vaciados 
+                 a la cera perdida para crear una filigrana falsa. Para lograr este efecto, el núcleo del objeto por vaciar se envuelve en alambres o hilos de cera.
+        
+                 Como máximo representante de esta técnica se encuentra el artesano José Jorge García García, se ubica en la calle vega, oaxaca, centro.
+        
+            </P>
+        </div>
+        <span class="back7"></span><span class="back8"></span><span class="back9"></span>
+    </section>
+
+
+
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+        slides.forEach((slide, index) => {
+            if (index === slideIndex) {
+            slide.classList.add("active");
+            } else {
+            slide.classList.remove("active");
+            }
+        });
+        }
+
+        function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    </script>
+</body>
+</html>
